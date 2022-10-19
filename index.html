@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Days since I cut my hair</title>
+</head>
+<body style="background-color: #0d1117">
+  <div
+    id="container"
+    style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; display: flex; justify-content: center; align-items: center;"
+  >
+  </div>
+
+  <script>
+    const todayDate = Date.now();
+    const cutDate = new Date(2022, 3, 5);
+    const diff = todayDate - cutDate;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+    const container = document.getElementById("container");
+    const daysSince = document.createElement("h1");
+    daysSince.innerHTML = `${days} days`;
+    daysSince.style.color = "#fff";
+    daysSince.style.fontSize = "5rem";
+    daysSince.style.textAlign = "center";
+    daysSince.style.fontFamily = "sans-serif";
+
+    container.appendChild(daysSince);
+  </script>
+</body>
+</html>
